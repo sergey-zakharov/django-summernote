@@ -49,3 +49,9 @@ class Attachment(models.Model):
         storage=_get_attachment_storage()
     )
     uploaded = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+	    ordering = ("-uploaded",)
+
+    def __str__(self):
+	    return self.name
